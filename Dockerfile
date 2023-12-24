@@ -9,6 +9,11 @@ ENV PYTHONUNBUFFERED 1
 # Set work directory
 WORKDIR /code
 
+# Install system dependencies for psycopg
+RUN apt-get update \
+    && apt-get -y install build-essential libpq-dev \
+    && apt-get clean
+    
 # Install dependencies
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
