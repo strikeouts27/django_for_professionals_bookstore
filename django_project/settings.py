@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+# psycopg2 error 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,11 +76,11 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # django_project/settings.py
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "django_for_professionals_bookstore",
+        "USER": "strikeouts27",
+        "PASSWORD": "Baseball100",
+        "HOST": "127.0.0.1",
         "PORT": 5432,
     }
 }
