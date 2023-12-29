@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-msd&ec*3%f9uohlh40ut)n%08pr-12#ewx73s@y&a*x00!4plo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["http://0.0.0.0:8000/", "0.0.0.0"]
 
 # Application definition
 
@@ -36,8 +36,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Local 
+    # Local
     "accounts.apps.AccountsConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = "django_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
