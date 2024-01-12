@@ -35,4 +35,5 @@ class HomepageTests(SimpleTestCase):
         self.assertEqual(view.func.__name__,HomePageView.as_view().__name__)
 
 
-    
+# methods used 
+# reverse finds urls by the name= value. 

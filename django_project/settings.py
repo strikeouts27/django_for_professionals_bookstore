@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-msd&ec*3%f9uohlh40ut)n%08pr-12#ewx73s@y&a*x00!4plo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://0.0.0.0:8000/", "0.0.0.0"]
+ALLOWED_HOSTS = ["http://0.0.0.0:8000/", "0.0.0.0", "localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -75,15 +75,16 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 # django_project/settings.py
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",
-        "PORT": 5432,
+        "ENGINE": "see_env",
+        "NAME": "see_env",
+        "USER": "see_env",
+        "PASSWORD": "see_env",
+        "HOST": "see_env",  # set in docker-compose.yml
+        "PORT": 5431,  # default postgres port
     }
 }
 
@@ -129,4 +130,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# set up a custom user
 AUTH_USER_MODEL = "accounts.CustomUser"
